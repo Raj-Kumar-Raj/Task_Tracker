@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./component/Card"
 import { Progress } from "./component/Progress"
 import { Avatar, AvatarFallback, AvatarImage } from "./component/Avatar"
-import { CheckCircle2, Circle, BarChart2, CalendarIcon, Clock } from "./Icons/Icon"
+import { CheckCircle2, Circle, BarChart2, CalendarIcon, Clock,LogOut } from "./Icons/Icon"
 import { Button } from "./component/Button"
 import { Badge } from "./component/badge"
 
@@ -134,7 +134,9 @@ export default function Dashboard({ isAdmin }) {
     <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-yellow-100">
       <header className="bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-white">TaskTracker</h1>
+        <a href="/" className="text-3xl font-bold text-white hover:text-yellow-200 transition-colors">
+  TaskTracker
+</a>
           <div className="flex items-center space-x-4">
             <span className="text-sm text-white opacity-90">Welcome, {user.name}</span>
             <Avatar>
@@ -143,6 +145,13 @@ export default function Dashboard({ isAdmin }) {
                 {user.name.split(' ').map(n => n[0]).join('')}
               </AvatarFallback>
             </Avatar>
+            <a
+           href="/"  // Replace with your actual logout route
+           className="text-white hover:bg-pink-700 hover:text-white p-2 rounded-full"
+            >
+            <LogOut className="h-5 w-5" />
+          <span className="sr-only">Logout</span>
+           </a>
           </div>
         </div>
       </header>
