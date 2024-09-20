@@ -3,8 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "./component/Card.jsx"
 import { Progress } from "./component/Progress.jsx"
 import { Avatar, AvatarFallback, AvatarImage } from "./component/Avatar.jsx"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./component/Accordion.jsx"
-import { CheckCircle2, Circle, BarChart2, Users, TrendingUp } from "./Icons/Icon.jsx"
+import { CheckCircle2, Circle, BarChart2, Users, TrendingUp ,LogOut} from "./Icons/Icon.jsx"
 import './global.css'
+import { Link } from 'react-router-dom';
+
 
 export default function Dashboard1() {
   const employees = [
@@ -64,13 +66,23 @@ export default function Dashboard1() {
     <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-yellow-100">
       <header className="bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-white">TaskTracker</h1>
+        <a href="/" className="text-3xl font-bold text-white hover:text-yellow-200 transition-colors">
+  TaskTracker
+</a>
           <div className="flex items-center space-x-4">
             <span className="text-sm text-white opacity-90">Welcome, Admin</span>
             <Avatar>
               <AvatarImage src="/placeholder.svg?height=32&width=32" alt="Admin" />
               <AvatarFallback className="bg-yellow-300 text-yellow-800">AD</AvatarFallback>
             </Avatar>
+            <a
+           href="/"  // Replace with your actual logout route
+           className="text-white hover:bg-pink-700 hover:text-white p-2 rounded-full"
+            >
+            <LogOut className="h-5 w-5" />
+          <span className="sr-only">Logout</span>
+           </a>
+
           </div>
         </div>
       </header>
