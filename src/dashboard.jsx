@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 import { CheckCircle2, Circle, BarChart2, Users, TrendingUp ,LogOut} from "./Icons/Icon.jsx"
 import './global.css'
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Dashboard1() {
@@ -61,6 +62,14 @@ export default function Dashboard1() {
       ]
     },
   ]
+
+
+  
+    const navigate = useNavigate();
+  
+    const handleRedirect = () => {
+      navigate('/create-employee');
+    };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-yellow-100">
@@ -124,7 +133,10 @@ export default function Dashboard1() {
 
           <div>
             <h2 className="text-2xl font-semibold mb-6 text-purple-800">Employee Progress</h2>
-            <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <button
+            onClick={handleRedirect}
+             className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+             >
               Create Employee
             </button><br></br><br></br>
             <div className="grid grid-cols-1 gap-6">
