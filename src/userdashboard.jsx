@@ -114,7 +114,7 @@ export default function Dashboard({ isAdmin }) {
           </CardHeader>
           <CardContent>
             <div className="flex space-x-4">
-              <Button className="bg-purple-600 hover:bg-purple-700">Add New Task</Button>
+            
               <Button variant="outline" className="border-purple-300 text-white-600 hover:bg-purple-200">View All Tasks</Button>
             </div>
           </CardContent>
